@@ -15,7 +15,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import com.gcu.business.UsersBusinessService;
 
 /*
- * Kacey Morris and Alex Vergara
+ * Elijah Olmos and Alex Vergara
  * Milestone
  * 11/29/2021
  */

@@ -13,7 +13,7 @@ import com.gcu.business.SecurityService;
 import com.gcu.business.SecurityServiceInterface;
 
 /*
- * Kacey morris and Alex vergara
+ * Elijah Olmos and Alex vergara
  * Milestone
  * 10/22/2021
  */

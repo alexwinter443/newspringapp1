@@ -1,7 +1,7 @@
 package com.gcu.data;
 
 /*
- * Kacey Morris and Alex Vergara
+ * Elijah Olmos and Alex Vergara
  * Milestone
  * 11/29/2021
  */

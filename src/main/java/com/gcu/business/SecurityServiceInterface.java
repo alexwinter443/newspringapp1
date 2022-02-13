@@ -8,7 +8,7 @@ import com.gcu.model.UserEntity;
 import com.gcu.model.UserModel;
 
 /*
- * Kacey morris and Alex vergara
+ * Elijah Olmos and Alex vergara
  * Milestone
  * 10/22/2021
  */

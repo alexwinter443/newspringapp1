@@ -4,7 +4,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 /*
- * Kacey morris and Alex vergara
+ * Elijah Olmos and Alex vergara
  * Milestone
  * 10/22/2021
  */

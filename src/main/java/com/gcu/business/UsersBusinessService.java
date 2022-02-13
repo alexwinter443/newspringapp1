@@ -16,7 +16,7 @@ import com.gcu.data.UsersDataService;
 import com.gcu.model.UserEntity;
 
 /*
- * Kacey Morris and Alex Vergara
+ * Elijah Olmos and Alex Vergara
  * Milestone
  * 11/29/2021
  */

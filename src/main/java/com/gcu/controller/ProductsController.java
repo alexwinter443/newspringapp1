@@ -18,7 +18,7 @@ import com.gcu.model.SearchProductsModel;
 import java.util.List;
 
 /*
- * Kacey morris and Alex vergara
+ * Elijah Olmos and Alex vergara
  * Milestone
  * 11/7/2021
  */

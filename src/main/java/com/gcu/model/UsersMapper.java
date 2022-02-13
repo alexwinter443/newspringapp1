@@ -8,7 +8,7 @@ import java.util.List;
 import org.springframework.jdbc.core.RowMapper;
 
 /*
- * Kacey Morris and Alex Vergara
+ * Elijah Olmos and Alex Vergara
  * Milestone
  * 11/29/2021
  */
