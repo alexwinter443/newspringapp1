@@ -1,17 +1,12 @@
 package com.gcu;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import com.gcu.model.UserModel;
 
 /*
  * Elijah Olmos and Alex vergara
  * Milestone
- * 10/3/2021
+ * 02/3/2022
  */
 @SpringBootApplication
 public class MilestoneApplication {  

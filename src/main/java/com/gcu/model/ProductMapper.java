@@ -8,7 +8,7 @@ import org.springframework.jdbc.core.RowMapper;
 /*
  * Elijah Olmos and Alex vergara
  * Milestone
- * 11/7/2021
+ * 02/07/2022
  */
 
 public class ProductMapper implements RowMapper<ProductModel> {

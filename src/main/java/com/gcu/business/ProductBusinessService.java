@@ -1,17 +1,16 @@
 package com.gcu.business;
 
-import java.util.ArrayList;
 import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
 
 import com.gcu.data.ProductDataService;
 import com.gcu.model.ProductModel;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 /*
  * Elijah Olmos and Alex Vergara
  * Milestone
- * 11/7/2021
+ * 02/07/2022
  */
 
 public class ProductBusinessService implements ProductBusinessServiceInterface {

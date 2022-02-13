@@ -6,7 +6,7 @@ import javax.validation.constraints.Size;
 /*
  * Elijah Olmos and Alex vergara
  * Milestone
- * 10/22/2021
+ * 02/02/2022
  */
 public class ProductModel {
 	

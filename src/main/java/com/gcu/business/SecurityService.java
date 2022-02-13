@@ -1,24 +1,19 @@
 package com.gcu.business;
 
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CookieValue;
-
 import com.gcu.data.UserDataService;
-import com.gcu.model.ProductModel;
 import com.gcu.model.UserEntity;
 import com.gcu.model.UserModel;
+
+import org.springframework.beans.factory.annotation.Autowired;
 
 /*
  * Elijah Olmos and Alex vergara
  * Milestone
- * 11/7/2021
+ * 02/07/2022
  */
 public class SecurityService implements SecurityServiceInterface{
 	

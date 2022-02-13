@@ -2,15 +2,13 @@ package com.gcu.model;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 import org.springframework.jdbc.core.RowMapper;
 
 /*
  * Elijah Olmos and Alex Vergara
  * Milestone
- * 11/29/2021
+ * 01/29/2022
  */
 
 public class UserModelMapper implements RowMapper<UserModel>{

@@ -5,27 +5,25 @@ import java.util.List;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
+import com.gcu.business.ProductBusinessServiceInterface;
+import com.gcu.business.SecurityServiceInterface;
+import com.gcu.model.SearchProductsModel;
+import com.gcu.model.UserEntity;
+import com.gcu.model.UserModel;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.gcu.business.ProductBusinessServiceInterface;
-import com.gcu.business.SecurityServiceInterface;
-import com.gcu.model.ProductModel;
-import com.gcu.model.SearchProductsModel;
-import com.gcu.model.UserEntity;
-import com.gcu.model.UserModel;
-
 /*
  * Elijah Olmos and Alex Vergara
  * Milestone
- * 11/29/2021
+ * 01/29/2022
  */
 
 @Controller

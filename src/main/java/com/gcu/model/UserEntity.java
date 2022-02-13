@@ -1,7 +1,5 @@
 package com.gcu.model;
 
-import java.util.ArrayList;
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
@@ -9,7 +7,7 @@ import org.springframework.data.relational.core.mapping.Table;
 /*
  * Elijah Olmos and Alex Vergara
  * Milestone
- * 11/29/2021
+ * 01/29/2022
  */
 
 // associate properties with database table and columns

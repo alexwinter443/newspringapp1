@@ -1,20 +1,17 @@
 package com.gcu.data;
 
-import java.sql.Statement;
 import java.util.List;
 
 import javax.sql.DataSource;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.stereotype.Repository;
-
-import com.gcu.model.ProductMapper;
-import com.gcu.model.ProductModel;
 import com.gcu.model.UserEntity;
 import com.gcu.model.UserModel;
 import com.gcu.model.UserModelMapper;
 import com.gcu.model.UsersMapper;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 
 @Repository
 public class UserDataService {
@@ -34,7 +31,7 @@ public class UserDataService {
 	public int getUsersByUsername(String username, String password)
 	{
 		System.out.println("OLD user data service getting user by username");
-		String sql = "SELECT COUNT(*) FROM users where username = ?";
+		//String sql = "SELECT COUNT(*) FROM users where username = ?";
 		return jdbcTemplate.queryForObject("SELECT COUNT(*) FROM users where username = ? and password = ?", new Object[]{username, password}, Integer.class);
 
 	}

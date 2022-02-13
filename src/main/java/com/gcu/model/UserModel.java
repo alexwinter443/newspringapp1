@@ -1,14 +1,12 @@
 package com.gcu.model;
 
-import java.util.ArrayList;
-
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 /*
  * Elijah Olmos and Alex Vergara
  * Milestone
- * 11/29/2021
+ * 01/29/2022
  */
 public class UserModel {
 	private Long id;
