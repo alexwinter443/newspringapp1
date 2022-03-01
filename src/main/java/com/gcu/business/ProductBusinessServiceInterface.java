@@ -10,6 +10,9 @@ import com.gcu.model.ProductModel;
  * 02/07/2022
  */
 
+/**
+ * Business Service Interface for Product interactions
+ */
 public interface ProductBusinessServiceInterface {
 	// interface methods for dependency injection smoothness
 	public List<ProductModel> getProducts();

@@ -13,6 +13,9 @@ import org.springframework.beans.factory.annotation.Autowired;
  * 02/07/2022
  */
 
+ /**
+  * Business Service for Product interactions
+  */
 public class ProductBusinessService implements ProductBusinessServiceInterface {
 	
 	// dependency injection
@@ -20,7 +23,9 @@ public class ProductBusinessService implements ProductBusinessServiceInterface {
 	@Autowired
 	ProductDataService productsDAO;
 
-	// get all products using the data service
+	/**
+	 * get all products using the data service
+	 */
 	@Override
 	public List<ProductModel> getProducts() {		
 		return productsDAO.getProducts();
@@ -36,31 +41,47 @@ public class ProductBusinessService implements ProductBusinessServiceInterface {
 		System.out.println("Destroy method of the Product Business Service was just called.");
 	}
 
-	// get a single product by id
+	/**
+	 *  get a single product by id
+	 * @param id the id of the product to get
+	 */
 	@Override
 	public ProductModel getOne(int id) {
 		return productsDAO.getById(id);
 	}
 
-	// search products by a search term
+	/**
+	 * search products by a search term
+	 * @param searchTerm the search term to search by
+	 */
 	@Override
 	public List<ProductModel> searchProducts(String searchTerm) {
 		return productsDAO.searchProducts(searchTerm);
 	}
 
-	// add a new product
+	/**
+	 * add a product to the database
+	 * @param newProduct the product to add
+	 */
 	@Override
 	public int addOne(ProductModel newProduct) {
 		return productsDAO.addOne(newProduct);
 	}
 
-	// delete a product
+	/**
+	 * delete a product from the database
+	 * @param id the id of the product to delete
+	 */
 	@Override
 	public boolean deleteOne(int id) {
 		return productsDAO.deleteOne(id);
 	}
 
-	// update a product
+	/**
+	 * update a product in the database
+	 * @param id the id of the product to update
+	 * @param updateProduct the product to update
+	 */
 	@Override
 	public ProductModel updateOne(int idToUpdate, ProductModel updateProduct) {
 		return productsDAO.updateOne(idToUpdate, updateProduct);

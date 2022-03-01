@@ -24,6 +24,9 @@ public class APIController {
 	@Autowired
 	private ProductBusinessServiceInterface service;
 	
+	/**
+	 * return all products in the database
+	 */
 	@GetMapping("/")
 	public ResponseEntity<?> showAllProducts(Model model) {
 		try {
@@ -40,6 +43,9 @@ public class APIController {
 		}
 	}
 	
+	/**
+	 * retrieve and return a single product by id
+	 */
 	@GetMapping("/{id}")
 	public ResponseEntity<?> getOne(@PathVariable(name="id") String id) {
 		try {
@@ -56,6 +62,9 @@ public class APIController {
 		}
 	}
 	
+	/**
+	 * retrieve and return multiple products by a search term
+	 */
 	@GetMapping("/search/{searchTerm}")
 	public ResponseEntity<?> searchProducts(@PathVariable(name="searchTerm") String searchTerm) {
 		List<ProductModel> results = null;
@@ -73,6 +82,9 @@ public class APIController {
 		}
 	}
 	
+	/**
+	 * add a product to the database
+	 */
 	@PostMapping("/")
 	public ResponseEntity<?> addProduct(@RequestBody ProductModel addProduct) {
 		String results = null;
@@ -90,6 +102,9 @@ public class APIController {
 		}
 	}
 	
+	/**
+	 * remove a product from the database
+	 */
 	@DeleteMapping("/{id}")
 	public ResponseEntity<?> deleteProduct(@PathVariable(name="id") String id) {
 		boolean results = false;
@@ -107,6 +122,9 @@ public class APIController {
 		}
 	}
 	
+	/**
+	 * update an order in the database
+	 */
 	@PutMapping("/")
 	public ResponseEntity<?> updateOrder(@RequestBody ProductModel updateProduct) {
 		ProductModel results = null;

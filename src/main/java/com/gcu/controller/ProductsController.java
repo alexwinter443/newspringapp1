@@ -29,7 +29,12 @@ public class ProductsController {
 	@Autowired
 	private ProductBusinessServiceInterface productService;
 	
-	// to create a product
+	
+	/** 
+	 * render the Add New form to the user
+	 * @param model 
+	 * @return Name of view to be rendered
+	 */
 	@GetMapping("/createProduct") 
 	public String displayAddNewForm(Model model){
 		// Display new product form
@@ -38,6 +43,14 @@ public class ProductsController {
 		return "CreateProduct";
 	}
 	
+	
+	/** 
+	 * Render the Add Package form to the user
+	 * @param newProduct
+	 * @param bindingResult
+	 * @param model
+	 * @return Name of view to be rendered
+	 */
 	// used in the form action to create a product
 	@PostMapping("/createPackage") 
 	// process a request from the AddProduct.  Add a new product to the database.
@@ -53,6 +66,12 @@ public class ProductsController {
 		return "productsAdmin";
 	} 
 	
+	
+	/** 
+	 * Render a search form to the user
+	 * @param model
+	 * @return Name of view to be rendered
+	 */
 	// controller for search form
 	@GetMapping("/searchForm") 
 	public String displaySearchForm(Model model){
@@ -62,6 +81,14 @@ public class ProductsController {
 		return "productSearchForm";
 	}
 	
+	
+	/** 
+	 * Render all the orders to the user, based on search criteria
+	 * @param searchModel
+	 * @param bindingResult
+	 * @param model
+	 * @return Name of view to be rendered
+	 */
 	// used in the form action to display search results
 	@PostMapping("/searchResults") 
 	public String showAllOrders(@Valid SearchProductsModel searchModel, BindingResult bindingResult, Model model) {
@@ -81,6 +108,12 @@ public class ProductsController {
 		// return "products";
 	}
 	
+	
+	/** 
+	 * Render all orders to the user (no search criteria)
+	 * @param model
+	 * @return Name of view to be rendered
+	 */
 	// controller mapping for all products
 	@GetMapping("/all") 
 	public String showAllOrders( Model model) {  
@@ -94,6 +127,12 @@ public class ProductsController {
 		return "productsImages";
 	}
 	
+	
+	/** 
+	 * Render all admin products to the user
+	 * @param model
+	 * @return Name of view to be rendered
+	 */
 	// controller mapping for admin
 	@GetMapping("/admin") 
 	public String showProductsForAdmin(Model model) {  
@@ -107,6 +146,14 @@ public class ProductsController {
 		return "productsAdmin";
 	}
 	
+	
+	/** 
+	 * Delete a product from the database
+	 * @param product
+	 * @param bindingResult
+	 * @param model
+	 * @return Name of view to be rendered
+	 */
 	// to delete with controller from admin
 	@PostMapping("/delete") 
 	public String deleteOrder(@Valid ProductModel product, BindingResult bindingResult, Model model) {
@@ -121,6 +168,13 @@ public class ProductsController {
 		return "productsAdmin";
 	}
 	
+	
+	/** 
+	 * Render the Edit form to the admin
+	 * @param productModel
+	 * @param model
+	 * @return Name of view to be rendered
+	 */
 	// edit form for admin
 	@PostMapping("/editForm") 
 	public String displayEditForm(ProductModel productModel, Model model){
@@ -131,6 +185,14 @@ public class ProductsController {
 		return "productsEditForm";
 	}
 	
+	
+	/** 
+	 * Update an order by calling a service
+	 * @param product
+	 * @param bindingResult
+	 * @param model
+	 * @return Name of view to be rendered
+	 */
 	// used in the edit form action
 	@PostMapping("/doUpdate") 
 	public String updateOrder(@Valid ProductModel product, BindingResult bindingResult, Model model) {
@@ -145,6 +207,13 @@ public class ProductsController {
 		return "productsAdmin";
 	}
 	
+	
+	/** 
+	 * Show a single product to the user
+	 * @param productModel
+	 * @param model
+	 * @return Name of view to be rendered
+	 */
 	// showing one product
 	@GetMapping("/showOne") 
 	public String displaySingleProduct(ProductModel productModel, Model model){

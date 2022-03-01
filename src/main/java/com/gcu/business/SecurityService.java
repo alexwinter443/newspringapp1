@@ -15,11 +15,20 @@ import org.springframework.beans.factory.annotation.Autowired;
  * Milestone
  * 02/07/2022
  */
+/**
+ * Service for handling all secrutiy related interactions
+ */
 public class SecurityService implements SecurityServiceInterface{
 	
 	@Autowired
 	UserDataService usersDAO;
 	
+	/**
+	 * check if a user is authenticated 
+	 * @param loginModel the user's login credentials
+	 * @param username the user's username
+	 * @param password the user's password
+	 */
 	@Override
 	public boolean isAuthenticated(UserModel loginModel, String username, String password) {
 	
@@ -50,8 +59,11 @@ public class SecurityService implements SecurityServiceInterface{
 		
 	}
 
-	// NOTE CHANGED FROM USERMODEL TO USERENTITY
-	// register user
+	/**
+	 * add a user to the database, registering them with the application
+	 * @param userModel the user to be registered
+	 * @param response the HttpServletResponse
+	 */
 	@Override
 	public UserEntity registerUser(UserModel userModel, HttpServletResponse response) {
 		
@@ -69,26 +81,39 @@ public class SecurityService implements SecurityServiceInterface{
 		return user;
 	}
 	
-	// NOTE CHANGED FROM USER MODEL TO USER ENTITY
+	/**
+	 * retrieve a user from the database by their username
+	 * @param userModel the UserModel of the user to be retrieved
+	 */
 	@Override
 	public UserEntity getByUsername(UserModel userModel) {
 		return usersDAO.findByUsername(userModel.getUsername());
 	}
 
-	// get all users from database 
+	/**
+	 * retrieve all users from the database
+	 * @return a List of all users
+	 */
 	@Override
 	public List<UserModel> getAllUsers() {
 		List<UserModel> users = usersDAO.getAllUsers();
 		return users;
 	}
 	
-	// delete a user
+	/**
+	 * Delete a single user from the db by their ID
+	 * @param id the ID of the user to be deleted
+	 */
 	@Override
 	public boolean deleteOne(Long id) {
 		return usersDAO.deleteOne(id);
 	}
 
-	// update a user
+	/**
+	 * Update a single user in the database
+	 * @param idToUpdate the ID of the user to be updated
+	 * @param updateUser the UserModel of the user to be updated
+	 */
 	@Override
 	public UserModel updateOne(Long idToUpdate, UserModel updateUser) {
 		return usersDAO.updateOne(idToUpdate, updateUser);

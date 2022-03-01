@@ -10,8 +10,10 @@ import com.gcu.model.ProductModel;
  * 02/07/2022
  */
 
+/**
+ * interface to make dependency injection easier
+ */
 public interface ProductDataAccessInterface {
-	// interface to make dependency injection easier
 	public ProductModel getById(int id);
 	public List<ProductModel> getProducts();
 	public List<ProductModel> searchProducts(String searchTerm);

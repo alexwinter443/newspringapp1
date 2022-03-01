@@ -37,6 +37,12 @@ public class UserController {
 	@Autowired
 	ProductBusinessServiceInterface productService;
 	
+	
+	/** 
+	 * Render the homepage
+	 * @param model
+	 * @return Name of view to be rendered
+	 */
 	// home route
 	@GetMapping("/")
 	public String homePage(Model model) {
@@ -50,6 +56,12 @@ public class UserController {
 		return "homePage";
 	}
 	
+	
+	/** 
+	 * Render the Login form to the user
+	 * @param model
+	 * @return Name of view to be rendered
+	 */
 	// login route takes us to login page
 	@GetMapping("/login")
 	public String display(Model model) {
@@ -60,6 +72,14 @@ public class UserController {
 		return "login";
 	}
 	
+	
+	/** 
+	 * Login the user through a database transaction
+	 * @param loginModel
+	 * @param bindingResult
+	 * @param model
+	 * @return Name of view to be rendered
+	 */
 	@PostMapping("/doLogin")
 	public String doLogin(@Valid UserEntity loginModel, BindingResult bindingResult, Model model) {
 		// check for errors
@@ -83,6 +103,12 @@ public class UserController {
 		}
 	}	
 	
+	
+	/** 
+	 * Render the registration form to the user
+	 * @param model
+	 * @return Name of view to be rendered
+	 */
 	// this takes us to the register page
 	@GetMapping("/register")
 	public String showRegister(Model model) {
@@ -93,6 +119,15 @@ public class UserController {
 		return "register";
 	}
 	
+	
+	/** 
+	 * Handle the submission of the register form
+	 * @param userModel
+	 * @param bindingResult
+	 * @param model
+	 * @param response
+	 * @return Name of view to be rendered
+	 */
 	// register form post	
 	@PostMapping("/doRegister")
 	public String doRegister(@Valid UserModel userModel, BindingResult bindingResult, Model model, HttpServletResponse response) {
@@ -119,6 +154,12 @@ public class UserController {
 		return "RegisterSuccess";
 	}
 	
+	
+	/** 
+	 * Render the users page to the admins
+	 * @param model
+	 * @return Name of view to be rendered
+	 */
 	// controller mapping for users admin
 	@GetMapping("/admin") 
 	public String showUsersForAdmin(Model model) {
@@ -132,6 +173,14 @@ public class UserController {
 		return "usersAdmin";
 	}
 	
+	
+	/** 
+	 * Handle the submission of the delete user form
+	 * @param user
+	 * @param bindingResult
+	 * @param model
+	 * @return Name of view to be rendered
+	 */
 	// to delete with controller from admin
 	@PostMapping("/delete") 
 	public String deleteOrder(@Valid UserModel user, BindingResult bindingResult, Model model) {
@@ -146,6 +195,14 @@ public class UserController {
 		return "usersAdmin";
 	}
 	
+	
+	/** 
+	 * Handle the submission of the edit user form
+	 * @param user
+	 * @param bindingResult
+	 * @param model
+	 * @return Name of view to be rendered
+	 */
 	// used in the admin form for each user
 	@PostMapping("/update") 
 	public String updateUser(@Valid UserModel user, BindingResult bindingResult, Model model) {

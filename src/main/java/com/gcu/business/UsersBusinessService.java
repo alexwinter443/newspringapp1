@@ -20,7 +20,9 @@ import com.gcu.model.UserEntity;
  * Milestone
  * 01/29/2022
  */
-
+/**
+ * Service for handling all user-related interactions
+ */
 @Service
 public class UsersBusinessService implements UserDetailsService {
 	
@@ -33,6 +35,10 @@ public class UsersBusinessService implements UserDetailsService {
 		this.service = service;
 	}
 
+	/**
+	 * Sprint Security override to get a user by username
+	 * @param username the user's username
+	 */
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		System.out.println("User business service is searching for " + username);

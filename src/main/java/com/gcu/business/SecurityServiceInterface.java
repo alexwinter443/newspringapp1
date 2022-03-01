@@ -12,6 +12,10 @@ import com.gcu.model.UserModel;
  * Milestone
  * 02/02/2022
  */
+
+ /**
+  * Interface for the SecurityService
+  */
 public interface SecurityServiceInterface {
 
 	public void test();
