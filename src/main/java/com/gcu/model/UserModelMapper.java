@@ -10,7 +10,9 @@ import org.springframework.jdbc.core.RowMapper;
  * Milestone
  * 01/29/2022
  */
-
+/**
+ * RowMapper for mapping Product Rows
+ */
 public class UserModelMapper implements RowMapper<UserModel>{
 
 	// NOTE CHANGED ALL USER MODEL TO USER ENTITY
