@@ -26,6 +26,13 @@ public class UserDataService {
 		this.jdbcTemplate = new JdbcTemplate(datasource);
 	}
 	
+	
+	/** 
+	 * get a single user by their username and password
+	 * @param username The username of the user to be retrieved
+	 * @param password The password of the user to be retrieved
+	 * @return int
+	 */
 	//@SuppressWarnings("deprecation")
 	@SuppressWarnings("deprecation")
 	public int getUsersByUsername(String username, String password)
@@ -36,6 +43,12 @@ public class UserDataService {
 
 	}
 	
+	
+	/** 
+	 * get a single user by their username
+	 * @param username The username of the user to be retrieved
+	 * @return UserEntity
+	 */
 	// NOTE CHANGED FROM USERMODEL TO USERENTITY
 	public UserEntity findByUsername(String username) {
 		System.out.println("OLD user data service find by username");
@@ -47,6 +60,12 @@ public class UserDataService {
 		return result;
 	}
 
+	
+	/** 
+	 * Add a user to the database
+	 * @param user UserModel of the user to be added
+	 * @return int
+	 */
 	public int addUser(UserModel user)
 	{
 		System.out.println("OLD user data service add user method");
@@ -61,6 +80,11 @@ public class UserDataService {
 				);
 	}
 	
+	
+	/** 
+	 * get all users from the DB
+	 * @return List<UserModel>
+	 */
 	// NOTE CHANGED FROM USERMODEL TO USERENTITY
 	public List<UserModel> getAllUsers() {
 		System.out.println("OLD user data service get all users");
@@ -70,6 +94,12 @@ public class UserDataService {
 		return result;
 	}
 	
+	
+	/** 
+	 * delete a user from the database by their id
+	 * @param id The id of the user to be deleted
+	 * @return boolean
+	 */
 	public boolean deleteOne(Long id) {
 		int updateResult = jdbcTemplate.update(
 				"DELETE FROM users WHERE ID = ?",
@@ -79,6 +109,13 @@ public class UserDataService {
 		return (updateResult > 0);
 	}
 
+	
+	/** 
+	 * update a single user in the database
+	 * @param idToUpdate The id of the user to be updated
+	 * @param updateUser UserModel of the user to be updated
+	 * @return UserModel
+	 */
 	// update a user by id with new user details
 	public UserModel updateOne(Long idToUpdate, UserModel updateUser) {
 		// sql query with injection protection

@@ -5,7 +5,9 @@ package com.gcu.model;
  * Milestone
  * 02/07/2022
  */
-
+/**
+ * RowMapper for mapping Search Product Rows
+ */
 public class SearchProductsModel {
 	// property for easier searching
 	private String searchTerm;

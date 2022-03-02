@@ -11,6 +11,9 @@ import org.springframework.jdbc.core.RowMapper;
  * 02/07/2022
  */
 
+/**
+ * RowMapper for mapping Product Rows
+ */
 public class ProductMapper implements RowMapper<ProductModel> {
 	
 	// match product mapping with product model for easier database manipulation

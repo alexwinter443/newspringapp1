@@ -19,7 +19,6 @@ import com.gcu.model.UserEntity;
  * @Service and @Repository are special cases of @Component
  * They are technically the same, but we use them for different purposes
  * */
-
 @Service
 public class UsersDataService implements UsersDataAccessInterface<UserEntity> {
 	// repository uses the crud repository for data manipulation

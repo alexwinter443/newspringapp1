@@ -31,7 +31,12 @@ public class ProductDataService implements ProductDataAccessInterface {
 		this.jdbcTemplate = new JdbcTemplate(dataSource);
 	}
 	
-	// get single product by id 
+	
+	/** 
+	 * get a single product by ID
+	 * @param id The ID of the product to be retrieved
+	 * @return ProductModel
+	 */
 	@Override
 	public ProductModel getById(int id) {
 		// query but easier with jdbc
@@ -42,6 +47,11 @@ public class ProductDataService implements ProductDataAccessInterface {
 		return result;
 	}
 
+	
+	/** 
+	 * get all products
+	 * @return List<ProductModel>
+	 */
 	// get all products
 	@Override
 	public List<ProductModel> getProducts() {
@@ -51,6 +61,12 @@ public class ProductDataService implements ProductDataAccessInterface {
 		return products;
 	}
 
+	
+	/** 
+	 * search for products by a search term string
+	 * @param searchTerm serach term to be used in the search
+	 * @return List<ProductModel>
+	 */
 	// search by a given term
 	@Override
 	public List<ProductModel> searchProducts(String searchTerm) {
@@ -60,6 +76,12 @@ public class ProductDataService implements ProductDataAccessInterface {
 				new Object[] {"%" + searchTerm + "%"});
 	}
 
+	
+	/** 
+	 * add a new product to the database
+	 * @param newProduct the product to be added
+	 * @return int
+	 */
 	// adding a new product to the database
 	@Override
 	public int addOne(ProductModel newProduct) {
@@ -74,6 +96,12 @@ public class ProductDataService implements ProductDataAccessInterface {
 				newProduct.getImage());
 	}
 
+	
+	/** 
+	 * delete a product from the database
+	 * @param id the ID of the product to be deleted
+	 * @return boolean
+	 */
 	// delete a product from database by id
 	@Override
 	public boolean deleteOne(int id) {
@@ -85,6 +113,13 @@ public class ProductDataService implements ProductDataAccessInterface {
 		return (updateResult > 0);
 	}
 
+	
+	/** 
+	 * update a product in the database
+	 * @param idToUpdate the ID of the product to be updated
+	 * @param updateProduct the ProductModel to replace the existing product
+	 * @return ProductModel
+	 */
 	// update a product by id with new product details
 	@Override
 	public ProductModel updateOne(int idToUpdate, ProductModel updateProduct) {

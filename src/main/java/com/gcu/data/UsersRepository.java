@@ -11,8 +11,10 @@ import com.gcu.model.UserEntity;
  * 01/29/2022
  */
 
+ /**
+  * crud repository handles most of the operations
+  */
 @Component
 public interface UsersRepository extends CrudRepository<UserEntity, Long> {
-	// crud repository handles most of the operations
 	UserEntity findByUsername(String username);
 }
