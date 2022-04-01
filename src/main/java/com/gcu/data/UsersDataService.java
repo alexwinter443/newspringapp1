@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.gcu.model.UserEntity;
+import com.gcu.util.DatabaseException;
 
 /*
  * Elijah Olmos and Alex Vergara
@@ -23,8 +24,8 @@ import com.gcu.model.UserEntity;
 public class UsersDataService implements UsersDataAccessInterface<UserEntity> {
 	// repository uses the crud repository for data manipulation
 	@Autowired
-	private UsersRepository usersRepository; 
-	
+	private UsersRepository usersRepository;
+
 	// non default constructor
 	public UsersDataService(UsersRepository usersRepository) {
 		this.usersRepository = usersRepository;
@@ -33,8 +34,14 @@ public class UsersDataService implements UsersDataAccessInterface<UserEntity> {
 	// find by username defined in interface
 	@Override
 	public UserEntity findByUsername(String username) {
-		System.out.println("In users data service username is: " + username);
-		return usersRepository.findByUsername(username);
+		try {
+			System.out.println("In users data service username is: " + username);
+			return usersRepository.findByUsername(username);
+		} catch (Exception e) {
+			// Log stack trace & throw custom exception to caller
+			e.printStackTrace();
+			throw new DatabaseException(e, "Database exception");
+		}
 	}
 
 }
